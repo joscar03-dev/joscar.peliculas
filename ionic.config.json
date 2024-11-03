@@ -1,0 +1,7 @@
+{
+  "name": "joscar.peliculas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
