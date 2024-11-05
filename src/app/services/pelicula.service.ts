@@ -28,7 +28,7 @@ export class PeliculaService {
     ).getDate();
     const numMes = hoy.getMonth() + 1;
 
-    let strMes = numMes < 10 ? '0' + numMes : numMes;
+    let strMes = (numMes < 10) ? '0' + numMes : numMes;
     const fInicio = `${hoy.getFullYear()}-${strMes}-01`;
     const fFin = `${hoy.getFullYear()}-${strMes}-${ultimoDia}`;
 
