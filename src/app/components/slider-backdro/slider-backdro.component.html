@@ -1,0 +1,11 @@
+<swiper-container init="false" navigation="true" #swiperBackdrop>
+  <swiper-slide *ngFor="let peli of peliculas" (click)="openModal(peli.id)">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>{{ peli.release_date | date: 'dd-MM-YYYY' }}</ion-card-subtitle>
+        <ion-card-title>{{ peli.title }}</ion-card-title>
+      </ion-card-header>
+      <img [src]="peli.backdrop_path | imagen" alt="{{ peli.title }}" />
+    </ion-card>
+  </swiper-slide>
+</swiper-container>
