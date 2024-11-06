@@ -1,0 +1,7 @@
+<swiper-container init="false" #swiperPoster>
+  <swiper-slide *ngFor="let peli of peliculas" (click)="openModal(peli.id)">
+    <ion-card>
+      <img [src]="peli.poster_path | imagen" alt="{{ peli.title }}" />
+    </ion-card>
+  </swiper-slide>
+</swiper-container>
