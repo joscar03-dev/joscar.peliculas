@@ -4,16 +4,20 @@
       <h2>Peliculas Nuevas</h2>
     </ion-row>
   </ion-grid>
-  <swiper-container [options]="{ slidesPerView: 3, loop: true }" navigation="true">
-    <swiper-slide *ngFor="let peli of peliculasRecientes">
-      <ion-card>
-        <ion-card-header>
-          <ion-card-subtitle>{{ peli.release_date | date: 'dd-MM-YYYY' }}</ion-card-subtitle>
-          <ion-card-title>{{ peli.title }}</ion-card-title>
-        </ion-card-header>
-        <img [src]="peli.backdrop_path | imagen" alt="{{ peli.title }}" />
-      </ion-card>
-    </swiper-slide>
-  </swiper-container>
+  <app-slider-backdro [peliculas]="peliculasRecientes"></app-slider-backdro>
+
+  <ion-grid fixed>
+    <ion-row>
+      <h2>Cartelera</h2>
+    </ion-row>
+  </ion-grid>
+  <app-slider-poster [peliculas]="peliculasCartelera"></app-slider-poster>
+
+  <ion-grid fixed>
+    <ion-row>
+      <h2>Populares</h2>
+    </ion-row>
+  </ion-grid>
+  <app-slider-poster (cargarMas)="cargarMasPelis()" [infinito]="true" [peliculas]="peliculasPopulares"></app-slider-poster>
 
 </ion-content>
