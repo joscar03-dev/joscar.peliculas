@@ -8,8 +8,8 @@ const URL = environment.imgPath;
 })
 export class ImagenPipe implements PipeTransform {
 
-  transform(img: string, size: string="w500"): string {
-    if (!img) return '';
+  transform(img: string | undefined | null , size: string="w500"): string {
+    if (!img) return './assets/images/default.webp';
     const imgUrl = `${URL}/${size}${img}`;
     return imgUrl;
   }
